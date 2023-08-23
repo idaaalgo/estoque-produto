@@ -5,28 +5,26 @@ import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-        //Instanciando um Scanner
         Scanner sc = new Scanner(System.in);
-        //Instanciando um Produto
-        Product product = new Product();
-        //Adicionando os dados do Produto
+
         System.out.println("Digite as informações do produto: ");
-        //Nome
         System.out.print("Nome: ");
-        product.name = sc.nextLine();
-        //Valor
+        String name = sc.nextLine();
+
         System.out.print("Valor: R$ ");
-        product.price = sc.nextDouble();
-        //Quantidade
+        double price = sc.nextDouble();
+
         System.out.print("Quantidade no estoque: ");
-        product.quantity = sc.nextInt();
-        //Printa o toString, pois o metodo recebeu um @Override na classe Product
+        int quantity = sc.nextInt();
+
+        Product product = new Product(name, price, quantity);
+
         System.out.println();
         System.out.println("Informações do produto: " + product);
 
         System.out.println();
         System.out.print("Digite o número de produtos pra serem adicionado no estoque: ");
-        int quantity = sc.nextInt();
+        quantity = sc.nextInt();
         product.addProducts(quantity);
 
         System.out.println();
